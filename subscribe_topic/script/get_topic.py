@@ -22,15 +22,16 @@ class Exchange_ws():
         self.topic=topic
 
         self.ws = websocket.WebSocketApp("ws://ws2.quote-dev-1.bybit.com/realtime",
-                                           on_message=lambda ws, message: self.on_message(ws, message, 'timestampE6'),
-
-
+                                         on_message=lambda ws, message: self.on_message(ws, message, 'timestampE6'),
+                                         on_error=lambda ws, error: self.on_error(ws, error),
+                                         on_close=lambda ws: self.on_close(ws),
                                          on_open=lambda ws: self.on_open(ws)
                                          )
 
 
+
     def on_message(self, ws, message, info):
-        log_file_name = 'index_quote_20-delay.log.' + time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        log_file_name = 'candle.D.BTCUSD.log.' + time.strftime('%Y-%m-%d', time.localtime(time.time()))
         log = Logger(log_file_name, level='info')
         log.logger.info(message)
 
@@ -56,12 +57,13 @@ class Exchange_ws():
         # 开启本地代理，方便调试
         # self.ws.run_forever(http_proxy_host='127.0.0.1', http_proxy_port=1087,sslopt={"cert_reqs": ssl.CERT_NONE})
         # self.ws.run_forever(ping_interval=30, ping_timeout=5)
+
         self.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
         print(self.result.__len__(), self._message)
         return self.result.__len__(), self.result, self._message
 
 if __name__ == '__main__':
-    Exchange_ws('{"op": "subscribe", "args": ["instrument_info.all"]}',
+    Exchange_ws('{"op": "subscribe", "args": ["candle.D.BTCUSD"]}',
                 3).GetWebsocketData()
     # Exchange_ws('{"id": 1545910660739,"type": "subscribe","topic": "/market/match:BTC-USDT","response": true}', 3).GetWebsocketData()
     # Exchange_ws({'kucoin':'{"id": 1545910660739,"type": "subscribe","topic": "/market/match:BTC-USDT","response": true}',

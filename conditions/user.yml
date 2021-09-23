@@ -1,0 +1,28 @@
+user_1:
+  username: seven.wu@yijinin.com
+  password: 8262202b763c9071281e137ee99f811dac75c237fa3042ae18124d7f93da6559
+  type: recaptcha
+  key_version: v2
+  g_recaptcha_response: 03AGdBq27FInbaWbegejWM3ziD5z5iJCqz_lmUYieO4dP7aV2BS9SfdoeOe3KRObbZamLdxe3qKJZiae3OGkCIur01czQ4V038fi6rW6elSumIrdDbIupGcoTrECEidtv7RiJlHpc5rRGH2UBOLPs7JGh1MBjBP7Mh5dCk0xv8hPUIR0LNTf
+
+
+user_2:
+  username: 1314880@163.com
+  password: 8262202b763c9071281e137ee99f811dac75c237fa3042ae18124d7f93da6559
+  type:  recaptcha
+  key_version: v2
+  g_recaptcha_response: 03AGdBq245bHGxEJ3-dWA7UjbatZA1O7nukgqn7VdO1B1Sb8oyjC8GXNMyK8VQHOXSFG87H-6NB1RlqO0HDJr9Xt3LZD16nS-Kh0tYlxQbDllGawj915OQT9zF2Gr2RkqedldqajArGa6EMe8cXrSAns6DKDkSz1m-17SS-3VmLied9sKbay5YIZJrr-PFMYARBOu5161XxC8Z-wodtiBzMro0FN4wqhxvzAlq1viVE-77D6CBw8V6iPGP8480Baxg_LEGFn0i05BTSdRjQ6ig5zTIzoNVCS9qbLAKWwFANwWzViZBpQN5k-CR-LIJ4CQuZmv5D6Pa__0sSOPyIZ_A14ORo_OzNyVMzewHJxrP8vxCqSrnzIISTb1XDoMG-2qBBIIUYTOdslMwe_HbYgfFgtml19ZwkK-VgA1GhPpAxwbd9jRUPvrBECDm52hhCXSLrL6A2PaMkIpRdWu8or8T9QKSHhj_PiBYFxKtWJuwtBvVb1x6gafZGmY8XxU57hH7fGTaIJIU3cxltD1HS0GX8dMRMwt-fTz2d5UlsoTv87tAXy5y7nFcuBx4hylfKFgvFHLoscEQ0YJOrMXRfhTEBwU8Vgq6MWWaM_Fzgom69gglXD3w6tCGF1RbWqBnuItYrI-Swu18dflhYBLOwsr-viVllNdKKifVsiEFvYdRSvNHDvUI_rEKs71QiU2bEufCaxquh_KODHjz0GuSEI4wazvqf4hRtNoMrOlto4RUvhdsnXx7J3YSMtYIx3xp0j8Sk7OG2LQho5iUiRNuXL0zy9LpvNWwrla9jJxPLgqglB6jB9CX16yRXcxoz-awRmenmVYJmubl1tdNEeVtbAOreD8j_-hMpTkKA1cr8G6pdrdpI9V4Cj609b5bLBdsfUJpB2RrJYLMo9MsYnmKNK4cVz_xvfB9Vml_HA3FMRFz9dKpPPp10fUf6d8JR5G2T9y--6SgHHO5p-A54MuWh9dqtCiRM3pBxTirNkMWmGe8MnYpkQq5SSiIJP04zAgropG95VpbvuDUQFsdbV7qdNG5nHHdI6EIN29JZ9R8nPjJLrtrl_DGpB9gnOYIygJE_GnET6-AK52eigGb7sqGGlh5X7dxWLZPNMUxOfR06mOI2u3VG53FA-5n06c9gJb5O-gsaVyQRmd3lN5cYv0Iz3qbVivwLaA2D3P94p1Nhlu83UyssGN9w-p_cyNApUko22QdfO4dStuBGtj85NbW4LI9Rp3xR83ZLmZNfA
+
+
+
+
+by:
+  {"orderType":"Limit","side":"Buy","timeInForce":"GoodTillCancel","qtyX":"1","tpTriggerBy":"LastPrice","slTriggerBy":"LastPrice","reduceOnly":False,"leverageE2":"1000","closeOnTrigger":False,"positionIdx":0,"type":"Activity","symbol":"BTCUSD","action":"Open","price":"50922.00","basePrice":"50922"}
+
+
+sell:
+  {"orderType":"Limit","side":"Sell","timeInForce":"GoodTillCancel","qtyX":"1","tpTriggerBy":"LastPrice","slTriggerBy":"LastPrice","reduceOnly":False,"leverageE2":"1000","closeOnTrigger":False,"positionIdx":0,"type":"Activity","symbol":"BTCUSD","action":"Open","price":"50922.00","basePrice":"50922"}
+
+
+order_path:
+  "/v3/private/order/create"
