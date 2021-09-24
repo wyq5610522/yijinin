@@ -22,7 +22,7 @@ class GreateOrder:
             user_data = self.result.get(self.user)
         rep = requests.post(url=self.url + "/login", json=user_data)
         rep = rep.json()
-        token = rep["token"]
+        token = rep.get("token")
         print(token)
         return token
 
@@ -55,3 +55,5 @@ if __name__ == '__main__':
     url = "http://api2.quote-dev-1.bybit.com"
     a = GreateOrder(url,user="user_1",volure=1)
     a.by()
+    # b = GreateOrder(url, user="user_2", volure=1)
+    # b.sell()
