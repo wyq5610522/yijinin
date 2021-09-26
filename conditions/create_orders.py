@@ -1,13 +1,13 @@
-
+from confing.confing import create_order_path,base_bath
+import sys
+sys.path.append(base_bath)
 import requests
-from load_file import LoadFile
-import os
+from conditions.common.load_file import LoadFile
 
 
 class GreateOrder:
 
-    yaml_path = (os.path.abspath(os.path.dirname(__file__))) + "/user.yml"
-    result = LoadFile(yaml_path).get_data()
+    result = LoadFile(create_order_path).get_data()
 
     def __init__(self,url,user=None,volure=None):
         self.url = url
@@ -54,6 +54,6 @@ class GreateOrder:
 if __name__ == '__main__':
     url = "http://api2.quote-dev-1.bybit.com"
     a = GreateOrder(url,user="user_1",volure=1)
-    a.by()
+    a.logoin()
     # b = GreateOrder(url, user="user_2", volure=1)
     # b.sell()

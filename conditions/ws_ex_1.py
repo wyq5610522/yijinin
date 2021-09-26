@@ -1,22 +1,42 @@
-from locust import HttpUser, TaskSet, task
+import websocket
+from threading import Thread
+import time
+import sys
+import json
 
-class WebsiteTasks(TaskSet):
-    def on_start(self):
-        self.client.post("/login", {
-            "username": "test",
-            "password": "123456"
-        })
+def on_message(ws, message):
+    print(message)
 
-    @task(2)
-    def index(self):
-        self.client.get("/")
 
-    @task(1)
-    def about(self):
-        self.client.get("/about/")
+def on_error(ws, error):
+    print(error)
 
-class WebsiteUser(HttpUser):
-    User = WebsiteTasks
-    host = "https://debugtalk.com"
-    min_wait = 1000
-    max_wait = 5000
+
+def on_close(ws):
+    print("### closed ###")
+
+
+
+def on_open(ws):
+    def run(*args):
+        for i in range(3):
+            ws.send('{"op": "subscribe", "args": ["candle.D.BTCUSD"]}')
+            time.sleep(1)
+
+        time.sleep(1)
+        ws.close()
+        print("Thread terminating...")
+    Thread(target=run).start()
+
+
+if __name__ == "__main__":
+    websocket.enableTrace(True)
+    host = "ws://ws2.quote-dev-1.bybit.com/realtime"
+    ws = websocket.WebSocketApp(host,
+                                on_message=on_message,
+                                on_error=on_error,
+                                on_close=on_close)
+    # print(ws.on_message)
+    ws.on_open = on_open
+    # recv_j = json.loads(recv)
+    ws.run_forever()

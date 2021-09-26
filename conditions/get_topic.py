@@ -6,7 +6,7 @@ import websocket
 import time
 import json
 import _thread
-from log import Logger
+from common.log import log
 import jsonpath
 import asyncio
 
@@ -31,9 +31,7 @@ class Exchange_ws():
 
 
     def on_message(self, ws, message, info):
-        log_file_name = 'candle.D.BTCUSD.log.' + time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        log = Logger(log_file_name, level='info')
-        log.logger.info(message)
+        log.info(message)
 
     # 出现错误时执行
     def on_error(self, ws, error):
